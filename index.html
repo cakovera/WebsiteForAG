@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A&G Gerüstbau - Professionelle Gerüstlösungen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f5f5f3;
+    color:#111;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:30px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-size:16px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#666;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:40px 8%;
+    gap:60px;
+    background:white;
+}
+
+.hero-left{
+    flex:1;
+}
+
+.hero-left h1{
+    font-size:72px;
+    line-height:1;
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.hero-left p{
+    font-size:18px;
+    color:#666;
+    max-width:500px;
+    line-height:1.7;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+}
+
+.btn-dark{
+    background:#111;
+    color:white;
+    padding:16px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-dark:hover{
+    background:#333;
+}
+
+.btn-light{
+    border:1px solid #ccc;
+    color:#111;
+    padding:16px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-light:hover{
+    border-color:#111;
+}
+
+/* HERO IMAGE */
+
+.hero-right{
+    flex:1;
+    position:relative;
+}
+
+.hero-right img{
+    width:100%;
+    border-radius:30px;
+    height:750px;
+    object-fit:cover;
+}
+
+/* FLOAT CARD */
+
+.float-card{
+    position:absolute;
+    bottom:30px;
+    left:-50px;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    width:260px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.float-card h3{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.float-card p{
+    color:#666;
+}
+
+/* SERVICES */
+
+.services{
+    padding:120px 8%;
+    background:white;
+}
+
+.section-title{
+    font-size:54px;
+    margin-bottom:60px;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:#f5f5f3;
+    border-radius:30px;
+    overflow:hidden;
+    transition:0.4s;
+    padding:40px 30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+.service-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:120px;
+    height:120px;
+    background:white;
+    border-radius:20px;
+    margin-bottom:30px;
+    transition:0.4s;
+}
+
+.service-card:hover .service-icon{
+    background:#111;
+}
+
+.service-card:hover .service-icon svg{
+    color:white;
+}
+
+.service-card:hover .service-icon svg line,
+.service-card:hover .service-icon svg rect,
+.service-card:hover .service-icon svg path{
+    stroke:white;
+    fill:white;
+}
+
+.service-content{
+    padding:0;
+}
+
+.service-content span{
+    color:#999;
+    font-size:14px;
+}
+
+.service-content h2{
+    margin-top:10px;
+    font-size:28px;
+}
+
+/* PROJECTS GALLERY */
+
+.projects{
+    padding:120px 8%;
+    background:#f5f5f3;
+}
+
+.section-subtitle{
+    font-size:18px;
+    color:#666;
+    margin-bottom:60px;
+    max-width:600px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.project-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    height:300px;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.project-item:hover{
+    transform:scale(1.05);
+    box-shadow:0 20px 50px rgba(0,0,0,0.2);
+}
+
+.project-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.project-item:hover img{
+    filter:brightness(0.7);
+}
+
+.project-overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding:40px 20px 20px;
+    color:white;
+    transform:translateY(100%);
+    transition:0.4s;
+    display:flex;
+    align-items:flex-end;
+}
+
+.project-item:hover .project-overlay{
+    transform:translateY(0);
+}
+
+.project-overlay p{
+    font-size:16px;
+    font-weight:600;
+    line-height:1.4;
+}
+
+/* STATS */
+
+.stats{
+    padding:100px 8%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    text-align:center;
+    gap:40px;
+    background:white;
+}
+
+.stat h1{
+    font-size:80px;
+    font-weight:700;
+}
+
+.stat p{
+    color:#777;
+    margin-top:10px;
+}
+
+/* ABOUT */
+
+.about{
+    padding:120px 8%;
+    background:#f5f5f3;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.about-content h2{
+    font-size:48px;
+    margin-bottom:30px;
+}
+
+.about-content p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.about-features{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:40px;
+}
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.feature-icon{
+    width:24px;
+    height:24px;
+    background:#111;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:bold;
+}
+
+.feature p{
+    margin:0;
+    font-size:16px;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+    height:500px;
+    object-fit:cover;
+}
+
+/* CONTACT SECTION */
+
+.contact{
+    padding:120px 8%;
+    background:white;
+}
+
+.contact-title{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.contact-subtitle{
+    color:#666;
+    font-size:18px;
+    margin-bottom:60px;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:start;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-weight:600;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.form-group input,
+.form-group textarea{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:none;
+    border-color:#111;
+}
+
+.form-group textarea{
+    resize:vertical;
+    min-height:150px;
+}
+
+.contact-options{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.btn-submit{
+    background:#111;
+    color:white;
+    padding:16px 30px;
+    border-radius:40px;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    flex:1;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn-submit:hover{
+    background:#333;
+}
+
+.btn-whatsapp{
+    background:#25D366;
+    color:white;
+    padding:16px 30px;
+    border-radius:40px;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    flex:1;
+    font-size:16px;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:0.3s;
+}
+
+.btn-whatsapp:hover{
+    background:#20BA5A;
+}
+
+/* MAP */
+
+.map-container{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+.map-container iframe{
+    width:100%;
+    height:500px;
+    border:none;
+    display:block;
+}
+
+.contact-info{
+    background:#f5f5f3;
+    padding:40px;
+    border-radius:20px;
+}
+
+.contact-info h3{
+    font-size:18px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.contact-info-item{
+    margin-bottom:30px;
+}
+
+.contact-info p{
+    color:#666;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+.contact-info a{
+    color:#111;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.contact-info a:hover{
+    color:#666;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    padding:60px 8%;
+    text-align:center;
+}
+
+footer p{
+    margin-bottom:20px;
+    opacity:0.8;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+.hero{
+    flex-direction:column;
+}
+
+.hero-left h1{
+    font-size:50px;
+}
+
+.hero-right img{
+    height:500px;
+}
+
+.float-card{
+    left:20px;
+}
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+.about{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.about-content h2{
+    font-size:36px;
+}
+
+.contact-container{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.map-container iframe{
+    height:400px;
+}
+
+nav ul{
+    gap:20px;
+    font-size:14px;
+}
+
+}
+
+/* Tablet (768px - 1024px) */
+@media(max-width:1024px){
+
+nav{
+    padding:20px 5%;
+}
+
+.logo span{
+    font-size:14px;
+}
+
+.logo svg{
+    width:35px;
+    height:35px;
+}
+
+nav ul{
+    gap:25px;
+    font-size:14px;
+}
+
+.hero{
+    padding:30px 5%;
+    gap:40px;
+    min-height:auto;
+}
+
+.hero-left h1{
+    font-size:48px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero-left p{
+    font-size:16px;
+    margin-bottom:30px;
+}
+
+.hero-right img{
+    height:450px;
+    border-radius:20px;
+}
+
+.float-card{ 
+    width:220px;
+    padding:20px;
+    left:10px;
+    bottom:20px;
+}
+
+.float-card h3{
+    font-size:32px;
+}
+
+.services{
+    padding:80px 5%;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+.services-grid{
+    gap:20px;
+}
+
+.service-card img{
+    height:250px;
+}
+
+.service-content{
+    padding:20px;
+}
+
+.stats{
+    padding:60px 5%;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.stat h1{
+    font-size:60px;
+}
+
+.about{
+    padding:80px 5%;
+    gap:50px;
+}
+
+.about-content h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    font-size:15px;
+}
+
+.contact{
+    padding:80px 5%;
+}
+
+.contact-title{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.contact-subtitle{
+    font-size:16px;
+    margin-bottom:40px;
+}
+
+.contact-container{
+    gap:50px;
+}
+
+.map-container iframe{
+    height:400px;
+}
+
+footer{
+    padding:40px 5%;
+    font-size:14px;
+}
+
+}
+
+/* Mobile (480px - 767px) */
+@media(max-width:768px){
+
+nav{
+    padding:15px 4%;
+    flex-wrap:wrap;
+}
+
+.logo{
+    width:100%;
+    margin-bottom:10px;
+}
+
+.logo span{
+    font-size:13px;
+}
+
+.logo svg{
+    width:30px;
+    height:30px;
+}
+
+nav ul{
+    width:100%;
+    gap:15px;
+    font-size:12px;
+    justify-content:center;
+}
+
+.hero{
+    padding:20px 4%;
+    gap:20px;
+    min-height:auto;
+    flex-direction:column;
+}
+
+.hero-left h1{
+    font-size:36px;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.hero-left p{
+    font-size:15px;
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    gap:12px;
+}
+
+.btn-dark, .btn-light{
+    padding:12px 20px;
+    font-size:14px;
+    width:100%;
+    text-align:center;
+}
+
+.hero-right{
+    width:100%;
+}
+
+.hero-right img{
+    height:320px;
+    border-radius:15px;
+}
+
+.float-card{
+    display:none;
+}
+
+.services{
+    padding:60px 4%;
+}
+
+.section-title{
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+.section-subtitle{
+    font-size:14px;
+    margin-bottom:40px;
+}
+
+.services-grid{
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.service-card img{
+    height:220px;
+}
+
+.service-content{
+    padding:15px;
+}
+
+.service-content h2{
+    font-size:22px;
+}
+
+.projects{
+    padding:60px 4%;
+}
+
+.projects-grid{
+    gap:15px;
+}
+
+.project-item{
+    height:250px;
+}
+
+.stats{
+    padding:50px 4%;
+    grid-template-columns:1fr;
+    gap:30px;
+    text-align:center;
+}
+
+.stat h1{
+    font-size:48px;
+}
+
+.stat p{
+    font-size:13px;
+}
+
+.about{
+    padding:60px 4%;
+    grid-template-columns:1fr;
+    gap:30px;
+}
+
+.about-content h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.about-content p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.about-features{
+    margin-top:20px;
+}
+
+.feature{
+    gap:10px;
+}
+
+.feature-icon{
+    width:20px;
+    height:20px;
+    font-size:12px;
+}
+
+.feature p{
+    font-size:13px;
+}
+
+.about-image img{
+    height:300px;
+    border-radius:15px;
+}
+
+.contact{
+    padding:60px 4%;
+}
+
+.contact-title{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.contact-subtitle{
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.contact-container{
+    grid-template-columns:1fr;
+    gap:30px;
+}
+
+.form-group label{
+    font-size:13px;
+}
+
+.form-group input,
+.form-group textarea{
+    padding:12px;
+    font-size:14px;
+}
+
+.form-group textarea{
+    min-height:120px;
+}
+
+.contact-options{
+    flex-direction:column;
+    gap:10px;
+    margin-top:20px;
+}
+
+.btn-submit, .btn-whatsapp{
+    padding:12px 20px;
+    font-size:14px;
+}
+
+.map-container iframe{
+    height:300px;
+}
+
+.contact-info{
+    padding:25px;
+    background:#f5f5f3;
+}
+
+.contact-info h3{
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.contact-info-item{
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    font-size:13px;
+}
+
+footer{
+    padding:30px 4%;
+    font-size:12px;
+}
+
+footer p{
+    margin-bottom:10px;
+}
+
+footer a{
+    margin:0 8px;
+    display:inline-block;
+}
+
+}
+
+/* Small Mobile (320px - 479px) */
+@media(max-width:480px){
+
+nav{
+    padding:12px 3%;
+}
+
+.logo span{
+    font-size:11px;
+}
+
+.logo svg{
+    width:28px;
+    height:28px;
+}
+
+nav ul{
+    gap:12px;
+    font-size:11px;
+}
+
+.hero{
+    padding:15px 3%;
+    gap:15px;
+}
+
+.hero-left h1{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.hero-left p{
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.hero-right img{
+    height:280px;
+}
+
+.services{
+    padding:40px 3%;
+}
+
+.section-title{
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.service-content h2{
+    font-size:18px;
+}
+
+.stats{
+    padding:40px 3%;
+    gap:20px;
+}
+
+.stat h1{
+    font-size:38px;
+}
+
+.about{
+    padding:40px 3%;
+    gap:20px;
+}
+
+.about-content h2{
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.about-content p{
+    font-size:13px;
+}
+
+.contact{
+    padding:40px 3%;
+}
+
+.contact-title{
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.contact-subtitle{
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.map-container iframe{
+    height:250px;
+}
+
+footer{
+    padding:20px 3%;
+    font-size:11px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Scaffold frame -->
+  <rect x="5" y="8" width="30" height="24" stroke="#111" stroke-width="2" fill="none"/>
+  <line x1="10" y1="8" x2="10" y2="32" stroke="#111" stroke-width="2"/>
+  <line x1="20" y1="8" x2="20" y2="32" stroke="#111" stroke-width="2"/>
+  <line x1="30" y1="8" x2="30" y2="32" stroke="#111" stroke-width="2"/>
+  <line x1="5" y1="18" x2="35" y2="18" stroke="#111" stroke-width="1.5"/>
+  <line x1="5" y1="25" x2="35" y2="25" stroke="#111" stroke-width="1.5"/>
+  <!-- Triangle accent -->
+  <polygon points="20,2 25,7 15,7" fill="#111"/>
+</svg>
+<span style="margin-left:8px; font-weight:700;">A&G Gerüstbau</span>
+</div>
+
+<ul>
+<li><a href="#home">Startseite</a></li>
+<li><a href="#services">Leistungen</a></li>
+<li><a href="#projects">Projekte</a></li>
+<li><a href="#about">Über uns</a></li>
+<li><a href="#contact">Kontakt</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-left">
+
+<h1>
+A&G GERÜSTBAU<br>
+PROFESSIONELLE<br>
+GERÜSTLÖSUNGEN
+</h1>
+
+<p>
+Ihre zuverlässigen Partner für hochwertige Fassaden-, Industrie- und Schutzgerüste.
+Mit moderner Technik und über 12 Jahren Erfahrung realisieren wir Ihre Bauprojekte 
+schnell, sicher und zuverlässig.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="btn-dark">
+Jetzt Kontakt
+</a>
+
+<a href="#services" class="btn-light">
+Unsere Leistungen
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="projekt4.JPG" alt="Gerüstbau Projekt">
+
+<div class="float-card">
+<h3>12+</h3>
+<p>Jahre Erfahrung im Gerüstbau</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<h2 class="section-title">
+Unsere Leistungen
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-icon">
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Building -->
+  <rect x="15" y="30" width="50" height="35" stroke="#111" stroke-width="2" fill="none"/>
+  <!-- Windows -->
+  <rect x="22" y="37" width="8" height="8" fill="#111"/>
+  <rect x="36" y="37" width="8" height="8" fill="#111"/>
+  <rect x="50" y="37" width="8" height="8" fill="#111"/>
+  <rect x="22" y="52" width="8" height="8" fill="#111"/>
+  <rect x="36" y="52" width="8" height="8" fill="#111"/>
+  <rect x="50" y="52" width="8" height="8" fill="#111"/>
+  <!-- Scaffold frame -->
+  <line x1="12" y1="25" x2="68" y2="25" stroke="#111" stroke-width="2"/>
+  <line x1="12" y1="20" x2="68" y2="20" stroke="#111" stroke-width="1.5"/>
+  <line x1="20" y1="20" x2="20" y2="27" stroke="#111" stroke-width="1.5"/>
+  <line x1="40" y1="20" x2="40" y2="27" stroke="#111" stroke-width="1.5"/>
+  <line x1="60" y1="20" x2="60" y2="27" stroke="#111" stroke-width="1.5"/>
+</svg>
+</div>
+
+<div class="service-content">
+<span>Service</span>
+<h2>Fassadengerüste</h2>
+</div>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Factory building -->
+  <rect x="15" y="35" width="50" height="30" stroke="#111" stroke-width="2" fill="none"/>
+  <!-- Chimney 1 -->
+  <rect x="25" y="15" width="6" height="22" stroke="#111" stroke-width="2" fill="none"/>
+  <!-- Chimney 2 -->
+  <rect x="49" y="18" width="6" height="19" stroke="#111" stroke-width="2" fill="none"/>
+  <!-- Windows -->
+  <rect x="22" y="42" width="6" height="6" fill="#111"/>
+  <rect x="32" y="42" width="6" height="6" fill="#111"/>
+  <rect x="42" y="42" width="6" height="6" fill="#111"/>
+  <rect x="52" y="42" width="6" height="6" fill="#111"/>
+  <!-- Roof angle -->
+  <line x1="15" y1="35" x2="40" y2="10" stroke="#111" stroke-width="2"/>
+  <line x1="65" y1="35" x2="40" y2="10" stroke="#111" stroke-width="2"/>
+</svg>
+</div>
+
+<div class="service-content">
+<span>Service</span>
+<h2>Industriegerüste</h2>
+</div>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield -->
+  <path d="M40 10 L25 20 L25 40 C25 55 40 70 40 70 C40 70 55 55 55 40 L55 20 L40 10 Z" stroke="#111" stroke-width="2" fill="none"/>
+  <!-- Checkmark -->
+  <line x1="32" y1="42" x2="38" y2="48" stroke="#111" stroke-width="2.5"/>
+  <line x1="38" y1="48" x2="50" y2="35" stroke="#111" stroke-width="2.5"/>
+</svg>
+</div>
+
+<div class="service-content">
+<span>Service</span>
+<h2>Schutzgerüste</h2>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS GALLERY -->
+
+<section class="projects" id="projects">
+
+<h2 class="section-title">
+Unsere Projekte
+</h2>
+
+<p class="section-subtitle">Beispiele unserer erfolgreich realisierten Gerüstlösungen</p>
+
+<div class="projects-grid">
+
+<div class="project-item">
+<img src="projekt1.jpg" alt="Fassadengerüst Projekt">
+<div class="project-overlay">
+<p>Fassadensanierung mit moderner Technik</p>
+</div>
+</div>
+
+<div class="project-item">
+<img src="projekt2.jpg" alt="Neubau Gerüst">
+<div class="project-overlay">
+<p>Neubau mit professioneller Ausführung</p>
+</div>
+</div>
+
+<div class="project-item">
+<img src="projekt3.jpg" alt="Instandhaltung">
+<div class="project-overlay">
+<p>Sichere und schnelle Montage</p>
+</div>
+</div>
+
+<div class="project-item">
+<img src="projekt4.jpg" alt="Großprojekt">
+<div class="project-overlay">
+<p>Großflächiges Mehrfamilienhaus</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat">
+<h1>250+</h1>
+<p>Projekte</p>
+</div>
+
+<div class="stat">
+<h1>120+</h1>
+<p>Kunden</p>
+</div>
+
+<div class="stat">
+<h1>12</h1>
+<p>Jahre Erfahrung</p>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="about-content">
+
+<h2>Gerüstbau auf<br>höchstem Niveau</h2>
+
+<p>
+Mit über 12 Jahren Erfahrung bieten wir professionelle Gerüstlösungen 
+für anspruchsvolle Bauprojekte. Unser Team setzt auf höchste 
+Sicherheitsstandards und moderne Technik.
+</p>
+
+<p>
+Wir arbeiten bundesweit mit namhaften Unternehmen zusammen und 
+realisieren Projekte termingerecht und zuverlässig.
+</p>
+
+<div class="about-features">
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<p><strong>Sicherheit</strong> auf höchstem Niveau</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<p><strong>Schnelle</strong> Ausführung und Montage</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<p><strong>Zuverlässigkeit</strong> bei jedem Projekt</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<p><strong>Moderne</strong> Technologie und Equipment</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="about-image">
+<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200">
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="contact-title">Kontaktieren Sie uns</h2>
+<p class="contact-subtitle">Wir freuen uns auf Ihre Anfrage und helfen Ihnen gerne weiter.</p>
+
+<div class="contact-container">
+
+<div class="contact-form">
+
+<form id="contactForm">
+
+<div class="form-group">
+<label for="name">Name *</label>
+<input type="text" id="name" name="name" required>
+</div>
+
+<div class="form-group">
+<label for="email">E-Mail *</label>
+<input type="email" id="email" name="email" required>
+</div>
+
+<div class="form-group">
+<label for="phone">Telefon</label>
+<input type="tel" id="phone" name="phone">
+</div>
+
+<div class="form-group">
+<label for="subject">Betreff *</label>
+<input type="text" id="subject" name="subject" required>
+</div>
+
+<div class="form-group">
+<label for="message">Nachricht *</label>
+<textarea id="message" name="message" required></textarea>
+</div>
+
+<div class="contact-options">
+<button type="button" class="btn-submit" id="emailBtn">📧 Email Gönder</button>
+<a href="#" class="btn-whatsapp" id="whatsappBtn">💬 WhatsApp</a>
+</div>
+
+</form>
+
+</div>
+
+<div>
+
+<div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.8846505682627!2d9.148810376888412!3d49.20048037205127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479827a5e6ecc111%3A0xf8ef6c39a6c7e28c!2sVerdistra%C3%9Fe%2024%2C%2074078%20Heilbronn%2C%20Germany!5e0!3m2!1sen!2sde!4v1716278294375" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<div class="contact-info">
+
+<h3>Kontakt-Informationen</h3>
+
+<div class="contact-info-item">
+<p><strong>Adresse:</strong></p>
+<p>Verdistr. 24<br>74078 Heilbronn</p>
+</div>
+
+<div class="contact-info-item">
+<p><strong>Telefon:</strong></p>
+<p><a href="tel:+490172084002">+49 01722084002</a></p>
+</div>
+
+<div class="contact-info-item">
+<p><strong>E-Mail:</strong></p>
+<p><a href="mailto:guerluek-geruestbau@hotmail.com">guerluek-geruestbau@hotmail.com</a></p>
+</div>
+
+<div class="contact-info-item">
+<p><strong>WhatsApp:</strong></p>
+<p><a href="https://wa.me/491722084002">+49 01722084002</a></p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<p>&copy; 2024 A&G Gerüstbau. Alle Rechte vorbehalten.</p>
+<p>
+<a href="#">Datenschutz</a> | 
+<a href="#">Impressum</a> | 
+<a href="#">AGB</a>
+</p>
+</footer>
+
+<script>
+
+// Email Button Handler
+const emailBtn = document.getElementById('emailBtn');
+const whatsappBtn = document.getElementById('whatsappBtn');
+const contactForm = document.getElementById('contactForm');
+
+function updateWhatsAppLink() {
+    const name = document.getElementById('name').value;
+    const subject = document.getElementById('subject').value;
+    const phone = document.getElementById('phone').value;
+    
+    let message = `Hallo!%0A%0A`;
+    if(name) message += `Mein Name: ${name}%0A`;
+    if(phone) message += `Mein Telefon: ${phone}%0A`;
+    if(subject) message += `Betreff: ${subject}%0A`;
+    message += `%0AIch möchte gerne ein Angebot für Gerüstbau erhalten.`;
+    
+    whatsappBtn.href = `https://wa.me/491722084002?text=${message}`;
+}
+
+// Update WhatsApp link whenever form inputs change
+if(document.getElementById('name')) {
+    document.getElementById('name').addEventListener('input', updateWhatsAppLink);
+}
+if(document.getElementById('subject')) {
+    document.getElementById('subject').addEventListener('input', updateWhatsAppLink);
+}
+if(document.getElementById('phone')) {
+    document.getElementById('phone').addEventListener('input', updateWhatsAppLink);
+}
+
+// Email button click handler
+if(emailBtn) {
+    emailBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Validate form
+        if(!name || !email || !subject || !message) {
+            alert('Bitte füllen Sie alle erforderlichen Felder aus (mit *)!');
+            return;
+        }
+        
+        // Create mailto link
+        const mailBody = `Absender: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\n\n--- Nachricht ---\n${message}`;
+        const mailtoLink = `mailto:guerluek-geruestbau@hotmail.com?subject=${encodeURIComponent('Gerüstbau Anfrage: ' + subject)}&body=${encodeURIComponent(mailBody)}`;
+        
+        // Open mailto
+        window.location.href = mailtoLink;
+        
+        // Show info after a short delay
+        setTimeout(() => {
+            alert('Die Standard-E-Mail-Anwendung wird geöffnet.\n\nAlternative Kontaktmethoden:\n📞 +49 01722084002\n💬 WhatsApp (Button oben)');
+        }, 1000);
+    });
+}
+
+// Set initial WhatsApp link
+if(whatsappBtn) {
+    updateWhatsAppLink();
+}
+
+</script>
+
+</body>
+</html>
